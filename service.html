@@ -1,1 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Services & Courses — SA Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0A1628;--navy2:#0F2040;--blue:#1E6FD9;--blue2:#3B8EF0;
+  --bluepale:#EBF3FF;--amber:#F5A623;--white:#fff;--slate:#F0F4FA;
+  --text:#1A2535;--mid:#4A5568;--light:#718096;--border:#DDE6F3;
+  --r:10px;--rl:18px;--sh:0 2px 16px rgba(10,22,40,.08);--sh2:0 8px 40px rgba(10,22,40,.14);
+}
+body{font-family:'Inter',sans-serif;color:var(--text);background:#fff;line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.2}
+a{text-decoration:none;color:inherit;cursor:pointer}
+ul{list-style:none}
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1160px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif}
+.logo-mark{background:var(--blue);color:#fff;font-weight:700;font-size:.95rem;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-text{color:#fff;font-weight:600;font-size:1.1rem}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{color:rgba(255,255,255,.75);font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:500;padding:8px 14px;border-radius:7px;transition:.2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-links .active{color:#fff;background:rgba(30,111,217,.2)}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:9px 18px!important}
+.nav-cta:hover{background:#1558b8!important}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.ham span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:.2s}
+
+/* BTN */
+.btn{display:inline-block;padding:12px 26px;border-radius:var(--r);font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;border:2px solid transparent;transition:.2s;text-align:center}
+.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-primary:hover{background:#1558b8;border-color:#1558b8;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--blue);border-color:var(--blue)}
+.btn-outline:hover{background:var(--blue);color:#fff}
+.btn-sm{padding:9px 18px;font-size:.85rem}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7)}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,#102a50 100%);padding:120px 0 72px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(30,111,217,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(30,111,217,.06) 1px,transparent 1px);background-size:48px 48px}
+.page-hero::after{content:'';position:absolute;top:-30%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(30,111,217,.15) 0%,transparent 70%);border-radius:50%}
+.hero-inner{position:relative;z-index:2}
+.breadcrumb{font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:16px;font-family:'Space Grotesk',sans-serif}
+.breadcrumb a{color:rgba(255,255,255,.45);transition:.2s}
+.breadcrumb a:hover{color:var(--blue2)}
+.page-hero h1{font-size:clamp(2rem,4vw,3rem);color:#fff;margin-bottom:16px;font-weight:700;letter-spacing:-.025em}
+.page-hero p{color:rgba(255,255,255,.65);font-size:1.05rem;max-width:580px;line-height:1.65}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero-tag{background:rgba(30,111,217,.2);border:1px solid rgba(30,111,217,.35);color:var(--blue2);font-size:.78rem;font-weight:600;padding:6px 14px;border-radius:100px;font-family:'Space Grotesk',sans-serif}
+
+/* SECTION */
+section{padding:88px 0}
+.sec-tint{background:var(--slate)}
+.sec-dark{background:var(--navy);color:#fff}
+.sec-hd{text-align:center;margin-bottom:52px}
+.sec-hd h2{font-size:clamp(1.7rem,2.8vw,2.3rem);margin-bottom:12px}
+.sec-hd p{color:var(--mid);font-size:1rem;max-width:540px;margin:0 auto}
+.sec-hd.lt h2{color:#fff}
+.sec-hd.lt p{color:rgba(255,255,255,.6)}
+
+/* FILTER */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.f-btn{background:var(--slate);border:1px solid var(--border);color:var(--mid);padding:9px 20px;border-radius:100px;font-family:'Space Grotesk',sans-serif;font-size:.87rem;font-weight:500;cursor:pointer;transition:.2s}
+.f-btn:hover,.f-btn.on{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* COURSES GRID */
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.c-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--rl);padding:28px;display:flex;flex-direction:column;gap:14px;transition:.22s}
+.c-card:hover{border-color:var(--blue);box-shadow:var(--sh2);transform:translateY(-3px)}
+.c-card.hidden{display:none}
+.c-top{display:flex;align-items:center;justify-content:space-between}
+.c-icon{font-size:2rem}
+.c-badge{font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:100px;background:var(--amber);color:var(--navy);letter-spacing:.03em}
+.c-badge.new{background:#12B76A;color:#fff}
+.c-badge.demand{background:#7C3AED;color:#fff}
+.c-card h3{font-size:1.1rem;font-weight:600;color:var(--text)}
+.c-card>p{font-size:.875rem;color:var(--mid);line-height:1.6}
+.c-meta{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--mid)}
+.c-tools{font-size:.775rem;color:var(--blue);font-weight:500;background:var(--bluepale);padding:9px 12px;border-radius:8px;line-height:1.6}
+.c-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.c-level{font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:100px}
+.beg{background:#ecfdf5;color:#059669}
+.int{background:#fffaeb;color:#b45309}
+.adv{background:#fef2f2;color:#dc2626}
+
+/* EXTRA SERVICES */
+.xtra-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.x-card{background:#fff;border:1px solid var(--border);border-radius:var(--rl);padding:28px 24px;transition:.22s}
+.x-card:hover{border-color:var(--blue);box-shadow:var(--sh)}
+.x-icon{font-size:2rem;margin-bottom:14px}
+.x-card h3{font-size:1rem;font-weight:600;margin-bottom:10px}
+.x-card p{font-size:.875rem;color:var(--mid);line-height:1.65}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.process-grid::after{content:'';position:absolute;top:36px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue2));z-index:0}
+.p-step{text-align:center;position:relative;z-index:1;padding:0 16px}
+.p-num{width:72px;height:72px;border-radius:50%;background:var(--blue);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 0 0 6px var(--bluepale)}
+.p-step h3{font-size:.95rem;margin-bottom:8px}
+.p-step p{font-size:.825rem;color:var(--mid);line-height:1.6}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.t-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--rl);padding:28px;transition:.22s}
+.t-card:hover{background:rgba(30,111,217,.12);border-color:rgba(30,111,217,.3)}
+.t-stars{color:var(--amber);font-size:1rem;margin-bottom:12px;letter-spacing:2px}
+.t-quote{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:20px;font-style:italic}
+.t-author{display:flex;align-items:center;gap:12px}
+.t-av{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.t-name{font-family:'Space Grotesk',sans-serif;font-weight:600;color:#fff;font-size:.875rem}
+.t-role{font-size:.775rem;color:rgba(255,255,255,.5)}
+
+/* CTA STRIP */
+.cta-strip{background:linear-gradient(135deg,var(--blue),#1051a8);padding:80px 0;text-align:center}
+.cta-strip h2{font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;margin-bottom:14px}
+.cta-strip p{color:rgba(255,255,255,.75);margin-bottom:32px;font-size:1rem;max-width:480px;margin-left:auto;margin-right:auto;margin-bottom:32px}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:64px 0 28px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.f-brand p{font-size:.875rem;line-height:1.65;margin-bottom:20px}
+.f-logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;margin-bottom:16px}
+.socials{display:flex;gap:8px}
+.socials a{width:34px;height:34px;background:rgba(255,255,255,.08);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:rgba(255,255,255,.6);transition:.2s}
+.socials a:hover{background:var(--blue);color:#fff}
+.f-col h4{font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:#fff;margin-bottom:16px}
+.f-col ul{display:flex;flex-direction:column;gap:9px}
+.f-col li,.f-col a{font-size:.85rem;color:rgba(255,255,255,.5);transition:.2s}
+.f-col a:hover{color:#fff}
+.f-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;color:rgba(255,255,255,.3)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .courses-grid{grid-template-columns:repeat(2,1fr)}
+  .xtra-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:repeat(2,1fr)}.testi-grid .t-card:last-child{display:none}
+  .process-grid{grid-template-columns:repeat(2,1fr)}.process-grid::after{display:none}
+  .f-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  .ham{display:flex}
+  .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy);flex-direction:column;padding:16px 24px 24px;border-top:1px solid rgba(255,255,255,.07);gap:4px}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 16px}
+  section{padding:60px 0}
+  .courses-grid{grid-template-columns:1fr}
+  .xtra-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}.testi-grid .t-card:last-child{display:block}
+  .process-grid{grid-template-columns:1fr;gap:28px}
+  .f-grid{grid-template-columns:1fr}
+  .f-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">SA</span>
+      <span class="logo-text">Training</span>
+    </a>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</div>
+    <h1>Courses &amp; Services</h1>
+    <p>Industry-aligned programmes taught by working professionals. Every course ends with real projects you can show to employers — not just a certificate.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">🤖 AI &amp; Machine Learning</span>
+      <span class="hero-tag">💻 Full-Stack Dev</span>
+      <span class="hero-tag">☁️ Cloud &amp; DevOps</span>
+      <span class="hero-tag">🛡️ Cybersecurity</span>
+      <span class="hero-tag">📊 Data Science</span>
+    </div>
+  </div>
+</div>
+
+<!-- COURSES -->
+<section>
+  <div class="container">
+    <div class="sec-hd">
+      <h2>All Courses</h2>
+      <p>Filter by domain — each track is project-driven and updated every 6 months to match industry demand</p>
+    </div>
+    <div class="filter-bar">
+      <button class="f-btn on" data-f="all">All Courses</button>
+      <button class="f-btn" data-f="ai">AI &amp; Data</button>
+      <button class="f-btn" data-f="dev">Development</button>
+      <button class="f-btn" data-f="cloud">Cloud &amp; DevOps</button>
+      <button class="f-btn" data-f="security">Cybersecurity</button>
+    </div>
+    <div class="courses-grid" id="coursesGrid">
+
+      <div class="c-card" data-cat="ai">
+        <div class="c-top"><span class="c-icon">🤖</span><span class="c-badge">Most Popular</span></div>
+        <h3>AI &amp; Machine Learning</h3>
+        <p>Covers supervised and unsupervised learning, deep learning architectures, NLP, computer vision, and deploying models in production with MLOps.</p>
+        <div class="c-meta"><span>⏱ 6 Months</span><span>📚 48 Modules</span><span>🛠 5 Projects</span></div>
+        <div class="c-tools">Python · TensorFlow · PyTorch · HuggingFace · MLflow · FastAPI · Docker</div>
+        <div class="c-foot"><span class="c-level beg">Beginner → Advanced</span><a href="contact.html" class="btn btn-primary btn-sm">Enrol Now</a></div>
+      </div>
+
+      <div class="c-card" data-cat="ai">
+        <div class="c-top"><span class="c-icon">🧠</span><span class="c-badge new">New</span></div>
+        <h3>Generative AI &amp; Prompt Engineering</h3>
+        <p>How LLMs work, advanced prompt design patterns, Retrieval-Augmented Generation (RAG), fine-tuning, and building AI-powered apps with real APIs.</p>
+        <div class="c-meta"><span>⏱ 2 Months</span><span>📚 18 Modules</span><span>🛠 3 Projects</span></div>
+        <div class="c-tools">OpenAI API · LangChain · Pinecone · LlamaIndex · Streamlit · Gradio</div>
+        <div class="c-foot"><span class="c-level beg">Beginner → Intermediate</span><a href="contact.html" class="btn btn-primary btn-sm">Enrol Now</a></div>
+      </div>
+
+      <div class="c-card" data-cat="ai">
+        <div class="c-top"><span class="c-icon">📊</span></div>
+        <h3>Data Science &amp; Analytics</h3>
+        <p>Statistical analysis, data wrangling, feature engineering, visualisation, and building data pipelines used in enterprise analytics teams.</p>
+        <div class="c-meta"><span>⏱ 4 Months</span><span>📚 36 Modules</span><span>🛠 4 Projects</span></div>
+        <div class="c-tools">Python · Pandas · NumPy · Scikit-learn · Power BI · Tableau · Spark</div>
+        <div class="c-foot"><span class="c-level int">Intermediate</span><a href="contact.html" class="btn btn-primary btn-sm">Enrol Now</a></div>
+      </div>
+
+      <div class="c-card" data-cat="dev">
+        <div class="c-top"><span class="c-icon">💻</span></div>
+        <h3>Full-Stack Web Development</h3>
+        <p>Build production-grade web apps from scratch — responsive React frontends, RESTful Node.js APIs, database design, and cloud deployment.</p>
+        <div class="c-meta"><span>⏱ 5 Months</span><span>📚 42 Modules</span><span>🛠 4 Projects</span></div>
+        <div class="c-tools">HTML · CSS · React · Node.js · Express · MongoDB · PostgreSQL · Docker</div>
+        <div class="c-foot"><span class="c-level beg">Beginner → Advanced</span><a href="contact.html" class="btn btn-primary btn-sm">Enrol Now</a></div>
+      </div>
+
+      <div class="c-card" data-cat="dev">
+        <div class="c-top"><span class="c-icon">📱</span></div>
+        <h3>Mobile App Development</h3>
+        <p>Build, test, and publish cross-platform iOS and Android apps. Covers state management, API integration, and store deployment end-to-end.</p>
+        <div class="c-meta"><span>⏱ 4 Months</span><span>📚 32 Modules</span><span>🛠 3 Projects</span></div>
+        <div class="c-tools">Flutter · Dart · React Native · Firebase · REST APIs · Play Store · App Store</div>
+        <div class="c-foot"><span class="c-level beg">Beginner → Advanced</span><a href="contact.html" class="btn btn-primary btn-sm">Enrol Now</a></div>
+      </div>
+
+      <div class="c-card" data-cat="dev">
+        <div class="c-top"><span class="c-icon">🗄️</span></div>
+        <h3>Database Design &amp; SQL Mastery</h3>
+        <p>Relational database design principles, advanced SQL, query optimisation, indexing strategies, and an introduction to NoSQL databases.</p>
+        <div class="c-meta"><span>⏱ 2 Months</span><span>📚 20 Modules</span><span>🛠 2 Projects</span></div>
+        <div class="c-tools">MySQL · PostgreSQL · MongoDB · Redis · Database Design · Query Optimization</div>
+        <div class="c-foot"><span class="c-level beg">Beginner</span><a href="contact.html" class="btn btn-primary btn-sm">Enrol Now</a></div>
+      </div>
+
+      <div class="c-card" data-cat="cloud">
+        <div class="c-top"><span class="c-icon">☁️</span><span class="c-badge demand">In Demand</span></div>
+        <h3>Cloud Computing — AWS</h3>
+        <p>End-to-end AWS training covering compute, storage, networking, serverless architecture, and AWS Solutions Architect Associate certification prep.</p>
+        <div class="c-meta"><span>⏱ 3 Months</span><span>📚 28 Modules</span><span>🛠 3 Projects</span></div>
+        <div class="c-tools">EC2 · S3 · Lambda · RDS · VPC · IAM · CloudFormation · CloudWatch</div>
+        <div class="c-foot"><span class="c-level int">Intermediate</span><a href="contact.html" class="btn btn-primary btn-sm">Enrol Now</a></div>
+      </div>
+
+      <div class="c-card" data-cat="cloud">
+        <div class="c-top"><span class="c-icon">⚙️</span></div>
+        <h3>DevOps Engineering</h3>
+        <p>CI/CD pipelines, containerisation, infrastructure as code, and monitoring — the full DevOps lifecycle from code commit to production deployment.</p>
+        <div class="c-meta"><span>⏱ 4 Months</span><span>📚 34 Modules</span><span>🛠 3 Projects</span></div>
+        <div class="c-tools">Git · Jenkins · Docker · Kubernetes · Terraform · Prometheus · Grafana · ArgoCD</div>
+        <div class="c-foot"><span class="c-level int">Intermediate</span><a href="contact.html" class="btn btn-primary btn-sm">Enrol Now</a></div>
+      </div>
+
+      <div class="c-card" data-cat="security">
+        <div class="c-top"><span class="c-icon">🛡️</span></div>
+        <h3>Ethical Hacking &amp; Cybersecurity</h3>
+        <p>Penetration testing methodologies, network security, vulnerability assessment, and preparation for CEH and CompTIA Security+ certifications.</p>
+        <div class="c-meta"><span>⏱ 4 Months</span><span>📚 38 Modules</span><span>🛠 4 Projects</span></div>
+        <div class="c-tools">Kali Linux · Metasploit · Wireshark · Burp Suite · Nmap · OWASP · SIEM</div>
+        <div class="c-foot"><span class="c-level adv">Intermediate → Advanced</span><a href="contact.html" class="btn btn-primary btn-sm">Enrol Now</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec-tint">
+  <div class="container">
+    <div class="sec-hd">
+      <h2>How Our Courses Work</h2>
+      <p>A structured learning journey — from enrolment to placement in four clear stages</p>
+    </div>
+    <div class="process-grid">
+      <div class="p-step">
+        <div class="p-num">1</div>
+        <h3>Free Counselling</h3>
+        <p>A 30-minute session with an advisor to identify your goals, background, and the right track for you — no pressure.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-num">2</div>
+        <h3>Structured Learning</h3>
+        <p>Instructor-led live sessions (online or offline), recorded classes, and weekly assignments — all at your chosen batch timing.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-num">3</div>
+        <h3>Build Real Projects</h3>
+        <p>Every track includes 2–5 portfolio projects built from real-world scenarios. Leave with something to show employers.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-num">4</div>
+        <h3>Placement Support</h3>
+        <p>Resume review, mock interviews, and direct referrals to our 40+ hiring partners — until you land the right role.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXTRA SERVICES -->
+<section>
+  <div class="container">
+    <div class="sec-hd">
+      <h2>Beyond Individual Courses</h2>
+      <p>Dedicated services built around different kinds of learning needs</p>
+    </div>
+    <div class="xtra-grid">
+      <div class="x-card">
+        <div class="x-icon">🎯</div>
+        <h3>Career Placement Support</h3>
+        <p>Resume workshops, LinkedIn optimisation, 3 rounds of mock technical interviews, and direct referrals to 40+ hiring partners across South India.</p>
+      </div>
+      <div class="x-card">
+        <div class="x-icon">🏢</div>
+        <h3>Corporate Training</h3>
+        <p>Custom training programmes for teams — upskilling employees in AI tools, cloud platforms, and modern development practices. Flexible scheduling.</p>
+      </div>
+      <div class="x-card">
+        <div class="x-icon">📜</div>
+        <h3>Certification Preparation</h3>
+        <p>Dedicated prep modules for AWS, Azure, Google Cloud, CompTIA Security+, and CEH — with mock exams and exam strategy guidance.</p>
+      </div>
+      <div class="x-card">
+        <div class="x-icon">💡</div>
+        <h3>1-on-1 Mentorship</h3>
+        <p>Personalised sessions with industry mentors to work through project challenges, career decisions, technical blockers, and interview preparation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec-dark">
+  <div class="container">
+    <div class="sec-hd lt">
+      <h2>What Our Students Say</h2>
+      <p>Outcomes from people who trained at SA Training</p>
+    </div>
+    <div class="testi-grid">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"The AI/ML track was more intense than I expected — in the best way. I went from knowing basic Python to deploying a recommendation engine on AWS in 6 months. Got placed at a product company in Chennai at ₹9 LPA."</p>
+        <div class="t-author">
+          <div class="t-av">PK</div>
+          <div><div class="t-name">Priya K.</div><div class="t-role">ML Engineer · Placed at Zoho</div></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I tried YouTube tutorials for 8 months and kept getting stuck. SA Training's structured Full-Stack track filled the gaps in one go. The projects are the difference — I had something real to show in every interview."</p>
+        <div class="t-author">
+          <div class="t-av">RM</div>
+          <div><div class="t-name">Rahul M.</div><div class="t-role">Full-Stack Developer · Placed at Freshworks</div></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"The DevOps course covered things I'd never seen in any certification guide — real pipeline debugging, Kubernetes incident response, Terraform state management issues. That's what set me apart in interviews."</p>
+        <div class="t-author">
+          <div class="t-av">AV</div>
+          <div><div class="t-name">Anjali V.</div><div class="t-role">DevOps Engineer · Placed at Infosys</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="container">
+    <h2>Find the right course for your goals</h2>
+    <p>Free 30-minute counselling session — no commitment, just honest guidance on which track fits you.</p>
+    <a href="contact.html" class="btn btn-ghost">Book a Free Session</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="f-logo"><span class="logo-mark">SA</span><span class="logo-text" style="color:#fff">Training</span></div>
+        <p>Tamil Nadu's leading IT training institute — building industry-ready professionals since 2018.</p>
+        <div class="socials">
+          <a href="#">in</a><a href="#">▶</a><a href="#">◉</a><a href="#">𝕏</a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="services.html">AI &amp; Machine Learning</a></li>
+          <li><a href="services.html">Full-Stack Dev</a></li>
+          <li><a href="services.html">Data Science</a></li>
+          <li><a href="services.html">Cloud Computing</a></li>
+          <li><a href="services.html">Cybersecurity</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Corporate Training</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Tamil Nadu, India</li>
+          <li>+91 98400 00000</li>
+          <li>info@satraining.in</li>
+          <li>Mon–Sat · 9 AM – 7 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2025 SA Training. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Use</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+document.getElementById('ham').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+// Scroll nav shadow
+window.addEventListener('scroll',function(){
+  document.querySelector('nav').style.boxShadow=window.scrollY>20?'0 2px 24px rgba(0,0,0,.3)':'none';
+});
+// Course filter
+document.querySelectorAll('.f-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.f-btn').forEach(function(b){b.classList.remove('on')});
+    btn.classList.add('on');
+    var f=btn.getAttribute('data-f');
+    document.querySelectorAll('.c-card').forEach(function(card){
+      if(f==='all'||card.getAttribute('data-cat')===f){card.classList.remove('hidden')}
+      else{card.classList.add('hidden')}
+    });
+  });
+});
+</script>
+</body>
+</html>
 
