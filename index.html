@@ -1,1 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>SA Training — IT & AI Technology Institute</title>
+<meta name="description" content="SA Training is a premier IT and AI technology training institute offering industry-ready courses in software development, machine learning, cybersecurity, and more." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo" onclick="showPage('home')">
+      <span class="logo-mark">SA</span>
+      <span class="logo-text">Training</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
+      <li><a href="#" onclick="showPage('services')" data-page="services">Services</a></li>
+      <li><a href="#" onclick="showPage('about')" data-page="about">About</a></li>
+      <li><a href="#" onclick="showPage('blog')" data-page="blog">Blog</a></li>
+      <li><a href="#" onclick="showPage('contact')" data-page="contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<main id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">Tamil Nadu's Leading IT Training Institute</div>
+      <h1 class="hero-title">Build the Skills<br/>That Power <span class="highlight">Tomorrow's Tech</span></h1>
+      <p class="hero-sub">From foundational programming to advanced AI — SA Training delivers hands-on, industry-aligned courses that get you job-ready, not just certified.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="showPage('services')">Explore Courses</button>
+        <button class="btn btn-ghost" onclick="showPage('contact')">Talk to an Advisor</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">2,400+</span><span class="stat-label">Students Trained</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">35+</span><span class="stat-label">Courses Offered</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">92%</span><span class="stat-label">Placement Rate</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Tracks -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Course Tracks</h2>
+        <p>Structured learning paths built around what the industry actually hires for</p>
+      </div>
+      <div class="tracks-grid">
+        <div class="track-card featured">
+          <div class="track-icon">🤖</div>
+          <div class="track-tag">Most Popular</div>
+          <h3>Artificial Intelligence & ML</h3>
+          <p>Neural networks, NLP, computer vision, and deploying models in production environments.</p>
+          <ul class="track-skills">
+            <li>Python for AI</li><li>TensorFlow / PyTorch</li><li>LLM Fine-tuning</li><li>MLOps</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" onclick="showPage('services')">View Track →</button>
+        </div>
+        <div class="track-card">
+          <div class="track-icon">💻</div>
+          <h3>Full-Stack Web Development</h3>
+          <p>End-to-end web applications — from responsive UI to scalable back-end APIs.</p>
+          <ul class="track-skills">
+            <li>React / Next.js</li><li>Node.js</li><li>SQL & NoSQL</li><li>Docker</li>
+          </ul>
+          <button class="btn btn-outline btn-sm" onclick="showPage('services')">View Track →</button>
+        </div>
+        <div class="track-card">
+          <div class="track-icon">🛡️</div>
+          <h3>Cybersecurity</h3>
+          <p>Ethical hacking, penetration testing, and enterprise-grade security architecture.</p>
+          <ul class="track-skills">
+            <li>Network Security</li><li>CEH Prep</li><li>SIEM Tools</li><li>Cloud Security</li>
+          </ul>
+          <button class="btn btn-outline btn-sm" onclick="showPage('services')">View Track →</button>
+        </div>
+        <div class="track-card">
+          <div class="track-icon">☁️</div>
+          <h3>Cloud & DevOps</h3>
+          <p>AWS, Azure, GCP, and the CI/CD pipelines that power modern software delivery.</p>
+          <ul class="track-skills">
+            <li>AWS / Azure</li><li>Kubernetes</li><li>CI/CD Pipelines</li><li>Terraform</li>
+          </ul>
+          <button class="btn btn-outline btn-sm" onclick="showPage('services')">View Track →</button>
+        </div>
+        <div class="track-card">
+          <div class="track-icon">📊</div>
+          <h3>Data Science & Analytics</h3>
+          <p>Turn raw data into strategic decisions using Python, SQL, and BI tools.</p>
+          <ul class="track-skills">
+            <li>Pandas / NumPy</li><li>Power BI</li><li>Statistics</li><li>Data Engineering</li>
+          </ul>
+          <button class="btn btn-outline btn-sm" onclick="showPage('services')">View Track →</button>
+        </div>
+        <div class="track-card">
+          <div class="track-icon">📱</div>
+          <h3>Mobile App Development</h3>
+          <p>Cross-platform and native apps for iOS and Android from concept to deployment.</p>
+          <ul class="track-skills">
+            <li>Flutter</li><li>React Native</li><li>Firebase</li><li>App Store Deploy</li>
+          </ul>
+          <button class="btn btn-outline btn-sm" onclick="showPage('services')">View Track →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why SA Training -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-content">
+          <h2>Why Students Choose SA Training</h2>
+          <p>We built SA Training because we saw too many graduates with degrees and no deployable skills. Every course here is designed backwards — starting from what hiring managers actually test for.</p>
+          <div class="why-points">
+            <div class="why-point">
+              <div class="why-num">01</div>
+              <div>
+                <strong>Industry Mentors, Not Just Instructors</strong>
+                <p>Every trainer is a practitioner with active industry experience — no outdated curriculum.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-num">02</div>
+              <div>
+                <strong>Project-First Learning</strong>
+                <p>Build 3–5 portfolio-worthy projects per course. Leave with something to show, not just a certificate.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-num">03</div>
+              <div>
+                <strong>Placement Support</strong>
+                <p>Resume reviews, mock interviews, and direct connections with our hiring partners across Tamil Nadu.</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="showPage('about')">Our Story →</button>
+        </div>
+        <div class="why-visual">
+          <div class="why-card-stack">
+            <div class="why-floating-card">
+              <span class="wfc-icon">✅</span>
+              <div>
+                <strong>Priya S. got placed at Infosys</strong>
+                <span>3 months after completing the AI/ML track</span>
+              </div>
+            </div>
+            <div class="why-floating-card">
+              <span class="wfc-icon">🚀</span>
+              <div>
+                <strong>Karthik M. landed ₹8 LPA</strong>
+                <span>Full-Stack track, fresher with 4 live projects</span>
+              </div>
+            </div>
+            <div class="why-floating-card">
+              <span class="wfc-icon">🎓</span>
+              <div>
+                <strong>128 students placed</strong>
+                <span>in Q3 2024 alone — across 40+ companies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>From Our Blog</h2>
+        <p>Insights from practitioners who train, build, and ship in production</p>
+      </div>
+      <div class="blog-preview-grid">
+        <div class="blog-preview-card" onclick="showPage('blog')">
+          <div class="bpc-tag">AI & Machine Learning</div>
+          <h3>How Large Language Models Are Reshaping IT Job Descriptions</h3>
+          <p>The skills employers list for "software engineer" roles have changed dramatically since 2023. Here's what SA Training data shows.</p>
+          <span class="bpc-link">Read Article →</span>
+        </div>
+        <div class="blog-preview-card" onclick="showPage('blog')">
+          <div class="bpc-tag">Career</div>
+          <h3>What 500 Hiring Managers in Tamil Nadu Actually Look for in Freshers</h3>
+          <p>We surveyed our placement partners. The answers were different from what most colleges teach.</p>
+          <span class="bpc-link">Read Article →</span>
+        </div>
+        <div class="blog-preview-card" onclick="showPage('blog')">
+          <div class="bpc-tag">Cloud & DevOps</div>
+          <h3>AWS vs Azure in 2025: Which Certification Opens More Doors?</h3>
+          <p>A practical breakdown based on Tamil Nadu's current hiring trends, not global averages.</p>
+          <span class="bpc-link">Read Article →</span>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <button class="btn btn-outline" onclick="showPage('blog')">View All Articles</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Strip -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Ready to invest in the right skills?</h2>
+      <p>Speak with an advisor. No hard sell — just honest guidance on which track fits your goals.</p>
+      <button class="btn btn-white" onclick="showPage('contact')">Schedule a Free Counselling Session</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== SERVICES PAGE ===== -->
+<main id="page-services" class="page">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="ph-breadcrumb"><span onclick="showPage('home')">Home</span> / Services</div>
+      <h1>Courses & Services</h1>
+      <p>Every track is structured into modules, delivered by working professionals, and assessed through real-world projects.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="services-filter">
+        <button class="filter-btn active" data-filter="all">All Courses</button>
+        <button class="filter-btn" data-filter="ai">AI & Data</button>
+        <button class="filter-btn" data-filter="dev">Development</button>
+        <button class="filter-btn" data-filter="infra">Cloud & Infra</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+      </div>
+
+      <div class="courses-grid">
+
+        <div class="course-card" data-category="ai">
+          <div class="course-header">
+            <span class="course-icon">🤖</span>
+            <span class="course-badge popular">Most Popular</span>
+          </div>
+          <h3>AI & Machine Learning</h3>
+          <p>Comprehensive coverage of supervised and unsupervised learning, deep learning architectures, model deployment, and working with LLMs.</p>
+          <div class="course-meta">
+            <span>⏱ 6 Months</span>
+            <span>📚 48 Modules</span>
+            <span>🛠 5 Projects</span>
+          </div>
+          <div class="course-tools">Python · TensorFlow · PyTorch · HuggingFace · MLflow · FastAPI</div>
+          <div class="course-footer">
+            <span class="course-level beginner">Beginner → Advanced</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Enrol Now</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-category="dev">
+          <div class="course-header">
+            <span class="course-icon">💻</span>
+          </div>
+          <h3>Full-Stack Web Development</h3>
+          <p>Build production-grade web applications from scratch — responsive frontends with React, RESTful APIs with Node.js, and cloud deployment.</p>
+          <div class="course-meta">
+            <span>⏱ 5 Months</span>
+            <span>📚 42 Modules</span>
+            <span>🛠 4 Projects</span>
+          </div>
+          <div class="course-tools">HTML/CSS · React · Node.js · Express · MongoDB · PostgreSQL · Docker</div>
+          <div class="course-footer">
+            <span class="course-level beginner">Beginner → Advanced</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Enrol Now</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-category="ai">
+          <div class="course-header">
+            <span class="course-icon">📊</span>
+          </div>
+          <h3>Data Science & Analytics</h3>
+          <p>Statistical analysis, data wrangling, visualization, and building data pipelines. Covers Python, SQL, and BI tooling used in enterprise settings.</p>
+          <div class="course-meta">
+            <span>⏱ 4 Months</span>
+            <span>📚 36 Modules</span>
+            <span>🛠 4 Projects</span>
+          </div>
+          <div class="course-tools">Python · Pandas · NumPy · Power BI · Tableau · Apache Spark</div>
+          <div class="course-footer">
+            <span class="course-level intermediate">Intermediate</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Enrol Now</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-category="infra">
+          <div class="course-header">
+            <span class="course-icon">☁️</span>
+            <span class="course-badge">In Demand</span>
+          </div>
+          <h3>Cloud Computing — AWS</h3>
+          <p>End-to-end AWS training covering compute, storage, networking, serverless, and preparation for the AWS Solutions Architect certification.</p>
+          <div class="course-meta">
+            <span>⏱ 3 Months</span>
+            <span>📚 28 Modules</span>
+            <span>🛠 3 Projects</span>
+          </div>
+          <div class="course-tools">EC2 · S3 · Lambda · RDS · VPC · IAM · CloudFormation</div>
+          <div class="course-footer">
+            <span class="course-level intermediate">Intermediate</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Enrol Now</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-category="infra">
+          <div class="course-header">
+            <span class="course-icon">⚙️</span>
+          </div>
+          <h3>DevOps Engineering</h3>
+          <p>CI/CD pipelines, containerisation, infrastructure as code, and monitoring. Covers the full DevOps lifecycle from code commit to production.</p>
+          <div class="course-meta">
+            <span>⏱ 4 Months</span>
+            <span>📚 34 Modules</span>
+            <span>🛠 3 Projects</span>
+          </div>
+          <div class="course-tools">Git · Jenkins · Docker · Kubernetes · Terraform · Prometheus · Grafana</div>
+          <div class="course-footer">
+            <span class="course-level intermediate">Intermediate</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Enrol Now</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-category="security">
+          <div class="course-header">
+            <span class="course-icon">🛡️</span>
+          </div>
+          <h3>Ethical Hacking & Cybersecurity</h3>
+          <p>Penetration testing methodologies, network security, vulnerability assessment, and preparation for CEH and CompTIA Security+ certifications.</p>
+          <div class="course-meta">
+            <span>⏱ 4 Months</span>
+            <span>📚 38 Modules</span>
+            <span>🛠 4 Projects</span>
+          </div>
+          <div class="course-tools">Kali Linux · Metasploit · Wireshark · Burp Suite · Nmap · OWASP</div>
+          <div class="course-footer">
+            <span class="course-level intermediate">Intermediate → Advanced</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Enrol Now</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-category="dev">
+          <div class="course-header">
+            <span class="course-icon">📱</span>
+          </div>
+          <h3>Mobile App Development</h3>
+          <p>Build, test, and publish iOS and Android apps using Flutter and React Native. Covers state management, API integration, and store deployment.</p>
+          <div class="course-meta">
+            <span>⏱ 4 Months</span>
+            <span>📚 32 Modules</span>
+            <span>🛠 3 Projects</span>
+          </div>
+          <div class="course-tools">Flutter · Dart · React Native · Firebase · REST APIs · App Store / Play Store</div>
+          <div class="course-footer">
+            <span class="course-level beginner">Beginner → Advanced</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Enrol Now</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-category="ai">
+          <div class="course-header">
+            <span class="course-icon">🧠</span>
+            <span class="course-badge new">New</span>
+          </div>
+          <h3>Generative AI & Prompt Engineering</h3>
+          <p>How LLMs work, prompt design patterns, RAG systems, fine-tuning, and building AI-powered applications with real APIs.</p>
+          <div class="course-meta">
+            <span>⏱ 2 Months</span>
+            <span>📚 18 Modules</span>
+            <span>🛠 3 Projects</span>
+          </div>
+          <div class="course-tools">OpenAI API · LangChain · Pinecone · LlamaIndex · Streamlit</div>
+          <div class="course-footer">
+            <span class="course-level beginner">Beginner → Intermediate</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Enrol Now</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-category="dev">
+          <div class="course-header">
+            <span class="course-icon">🗄️</span>
+          </div>
+          <h3>Database Design & SQL Mastery</h3>
+          <p>Relational database design principles, advanced SQL, query optimisation, and an introduction to NoSQL — the foundation every developer needs.</p>
+          <div class="course-meta">
+            <span>⏱ 2 Months</span>
+            <span>📚 20 Modules</span>
+            <span>🛠 2 Projects</span>
+          </div>
+          <div class="course-tools">MySQL · PostgreSQL · MongoDB · Redis · Database Design · Query Optimization</div>
+          <div class="course-footer">
+            <span class="course-level beginner">Beginner</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Enrol Now</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Services -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-header">
+        <h2>Beyond Courses</h2>
+        <p>Support systems that ensure your learning translates into career outcomes</p>
+      </div>
+      <div class="add-services-grid">
+        <div class="add-service">
+          <div class="as-icon">🎯</div>
+          <h3>Career Placement Support</h3>
+          <p>Resume workshops, LinkedIn optimisation, mock technical interviews, and direct referrals to our 40+ hiring partners across South India.</p>
+        </div>
+        <div class="add-service">
+          <div class="as-icon">🏢</div>
+          <h3>Corporate Training</h3>
+          <p>Custom training programs for teams — upskilling employees in AI tools, cloud platforms, and modern development practices.</p>
+        </div>
+        <div class="add-service">
+          <div class="as-icon">📜</div>
+          <h3>Certification Prep</h3>
+          <p>Dedicated prep modules for AWS, Azure, Google Cloud, CompTIA, and other globally recognised certifications.</p>
+        </div>
+        <div class="add-service">
+          <div class="as-icon">💡</div>
+          <h3>1-on-1 Mentorship</h3>
+          <p>Personalised sessions with industry mentors to work through project challenges, career decisions, and technical blockers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== ABOUT PAGE ===== -->
+<main id="page-about" class="page">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="ph-breadcrumb"><span onclick="showPage('home')">Home</span> / About</div>
+      <h1>About SA Training</h1>
+      <p>We started with one question: why do so many computer science graduates struggle to get hired? The answer shaped everything we built.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-story">
+        <div class="about-story-text">
+          <h2>Our Story</h2>
+          <p>SA Training was founded in Tamil Nadu by a group of IT professionals who had spent years on hiring panels — and had grown frustrated watching talented graduates fail interviews not because they weren't smart, but because their education had never connected theory to practice.</p>
+          <p>We built this institute differently. Every course starts with what a hiring manager actually tests. Every trainer is someone who ships real software for a living. Every student leaves with projects in their portfolio, not just pages in a certificate.</p>
+          <p>Today, SA Training has trained over 2,400 students. We work with companies ranging from startups to MNCs to understand the shifting skill requirements in AI, cloud, and development — and we update our curriculum accordingly, usually ahead of the market.</p>
+        </div>
+        <div class="about-story-visual">
+          <div class="about-year-block">
+            <div class="ayb-year">2018</div>
+            <div class="ayb-event">Founded in Tamil Nadu — first batch of 32 students</div>
+          </div>
+          <div class="ayb-line"></div>
+          <div class="about-year-block">
+            <div class="ayb-year">2020</div>
+            <div class="ayb-event">Launched AI & ML track — first institute in the region to do so</div>
+          </div>
+          <div class="ayb-line"></div>
+          <div class="about-year-block">
+            <div class="ayb-year">2022</div>
+            <div class="ayb-event">Reached 1,000 alumni — opened Corporate Training vertical</div>
+          </div>
+          <div class="ayb-line"></div>
+          <div class="about-year-block">
+            <div class="ayb-year">2024</div>
+            <div class="ayb-event">2,400+ students trained · 40+ placement partners · 92% placement rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header light">
+        <h2>What We Stand For</h2>
+        <p>These aren't mission statement words. They're how we make decisions every day.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="vc-icon">🏗️</div>
+          <h3>Build, Don't Just Learn</h3>
+          <p>Every topic is taught through building something. If a concept can't be applied in a project, it doesn't belong in a module.</p>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">🔄</div>
+          <h3>Curriculum That Keeps Up</h3>
+          <p>AI is rewriting job descriptions quarterly. Our curriculum committee reviews and updates tracks every six months — actively, not reactively.</p>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">🤝</div>
+          <h3>Honest Guidance</h3>
+          <p>We tell prospective students which track suits them — including when it's not the most expensive one. Our reputation is built on outcomes, not enrolment numbers.</p>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">🌐</div>
+          <h3>Accessible Education</h3>
+          <p>World-class IT training shouldn't require moving to Bangalore or Chennai. We bring industry-grade training to Tamil Nadu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>The People Behind SA Training</h2>
+        <p>Practitioners who also teach — not teachers who once practised</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">SK</div>
+          <h3>Senthil Kumar A.</h3>
+          <div class="team-role">Founder & Lead Trainer — AI/ML</div>
+          <p>15 years in machine learning and data engineering. Former tech lead at a Bangalore-based AI product company. Believes every concept has a one-line real-world analogy.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">RP</div>
+          <h3>Ramya Priya S.</h3>
+          <div class="team-role">Lead Trainer — Full-Stack Development</div>
+          <p>Ex-senior engineer at a Series B startup. Has built e-commerce platforms, fintech dashboards, and taught React since v15. Keeps every project deployment-ready.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">MV</div>
+          <h3>Murugan V.</h3>
+          <div class="team-role">Trainer — Cybersecurity & Networking</div>
+          <p>Certified Ethical Hacker with 10 years in network security. Consults for mid-size enterprises on the side — brings live threat scenarios into the classroom.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">AK</div>
+          <h3>Anjali K.</h3>
+          <div class="team-role">Trainer — Cloud & DevOps</div>
+          <p>AWS Solutions Architect and DevOps engineer who has migrated legacy monoliths to microservices. Runs the certification prep programme at SA Training.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Numbers -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="numbers-grid">
+        <div class="number-block">
+          <div class="nb-num">2,400+</div>
+          <div class="nb-label">Students Trained</div>
+        </div>
+        <div class="number-block">
+          <div class="nb-num">35+</div>
+          <div class="nb-label">Active Courses</div>
+        </div>
+        <div class="number-block">
+          <div class="nb-num">92%</div>
+          <div class="nb-label">Placement Rate</div>
+        </div>
+        <div class="number-block">
+          <div class="nb-num">40+</div>
+          <div class="nb-label">Hiring Partners</div>
+        </div>
+        <div class="number-block">
+          <div class="nb-num">6</div>
+          <div class="nb-label">Years Running</div>
+        </div>
+        <div class="number-block">
+          <div class="nb-num">4.8★</div>
+          <div class="nb-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== BLOG PAGE ===== -->
+<main id="page-blog" class="page">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="ph-breadcrumb"><span onclick="showPage('home')">Home</span> / Blog</div>
+      <h1>SA Training Blog</h1>
+      <p>Expertise, industry analysis, and career guidance — written by the people who train, hire, and build in IT every day.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid">
+
+        <!-- Blog 1 -->
+        <article class="blog-card featured-blog">
+          <div class="blog-card-tag">AI & Machine Learning</div>
+          <h2>How Large Language Models Are Reshaping IT Job Descriptions in 2025</h2>
+          <div class="blog-meta">By Senthil Kumar A. &nbsp;·&nbsp; November 12, 2025 &nbsp;·&nbsp; 8 min read</div>
+          <p>In 2022, a job listing for "Python Developer" typically mentioned Django, REST APIs, and Git. By mid-2025, the same role title frequently lists LLM integration, vector databases, and prompt engineering as requirements. The shift has been fast, uneven, and largely unreported in mainstream education circles.</p>
+          <p>At SA Training, we track job description language across 500+ postings from our hiring partners every quarter. Here's what that data shows — and what it means for anyone planning their IT career in Tamil Nadu or beyond.</p>
+          <h3>The Three Skill Layers Now Expected of Developers</h3>
+          <p>Hiring managers in our network consistently describe a "three-layer" expectation that has emerged since 2023. First, classical software engineering fundamentals — data structures, system design, clean code — remain non-negotiable. Second, cloud-native fluency: knowing how to deploy, monitor, and scale services on AWS or Azure is now a baseline, not a differentiator. Third, and most recently, AI-augmented development: the ability to integrate LLM APIs, build RAG pipelines, or fine-tune models for specific use cases.</p>
+          <p>What's notable is that the third layer hasn't replaced the first two — it has stacked on top of them. The developers earning the highest offers aren't pure AI specialists; they're engineers who understand classical software design and can reason about where AI tools belong in a system.</p>
+          <h3>What This Means for Your Learning Path</h3>
+          <p>If you're starting from scratch, we still recommend beginning with strong programming foundations — Python, data structures, one web framework. The developers who struggle with AI tooling most aren't those who learned ML late; they're those who tried to shortcut the fundamentals. Build the foundation solid, then layer in cloud and AI knowledge on top of a working mental model of how software systems behave.</p>
+          <div class="blog-cta-inline">
+            <span>Interested in building these skills systematically?</span>
+            <button class="btn btn-primary btn-sm" onclick="showPage('services')">Explore Our AI/ML Track</button>
+          </div>
+        </article>
+
+        <!-- Blog 2 -->
+        <article class="blog-card">
+          <div class="blog-card-tag">Career & Placement</div>
+          <h2>What 500 Hiring Managers in Tamil Nadu Actually Look for in Freshers</h2>
+          <div class="blog-meta">By Ramya Priya S. &nbsp;·&nbsp; October 28, 2025 &nbsp;·&nbsp; 6 min read</div>
+          <p>Last year, SA Training surveyed 500 hiring managers across Tamil Nadu — from Coimbatore's manufacturing sector tech teams to Chennai's startup ecosystem. The results challenged several assumptions we had about what entry-level hiring actually looks for.</p>
+          <p>The most common complaint from hiring managers wasn't lack of technical knowledge. It was the inability to debug independently, communicate progress during a task, and write readable code that others can maintain. These are metacognitive and professional skills — and most college programmes don't teach them explicitly.</p>
+          <p>The top five things hiring managers actually tested in fresher interviews, in order: (1) problem decomposition — can you break a vague problem into concrete steps? (2) code readability and naming conventions; (3) Git workflow fluency; (4) the ability to explain a technical decision out loud; (5) basic SQL querying under time pressure.</p>
+          <p>At SA Training, we've built these explicitly into every course — not as an afterthought, but as the frame through which every technical concept is taught. Our students don't just learn what a function does; they learn to explain why they wrote it the way they did.</p>
+        </article>
+
+        <!-- Blog 3 -->
+        <article class="blog-card">
+          <div class="blog-card-tag">Cloud & Infrastructure</div>
+          <h2>AWS vs Azure in 2025: Which Certification Actually Opens More Doors?</h2>
+          <div class="blog-meta">By Anjali K. &nbsp;·&nbsp; October 10, 2025 &nbsp;·&nbsp; 7 min read</div>
+          <p>The AWS vs Azure debate comes up in every cloud counselling session we run at SA Training. Both platforms are legitimate, both certifications are well-regarded — but the right choice depends on where you want to work, not which platform is globally dominant.</p>
+          <p>In Tamil Nadu specifically, the landscape looks like this: manufacturing and government-adjacent companies have been heavier Azure adopters, partly due to Microsoft's existing enterprise relationships and Office 365 integrations. Product-focused startups and GCCs (Global Capability Centres) lean AWS heavily. If you're aiming at MNCs with Indian development centres — TCS Digital, Cognizant, Infosys BPM — AWS certification has a slight edge in raw job posting volume.</p>
+          <p>That said, the most competitive candidates we place aren't single-cloud. The fundamentals — networking, IAM, storage, compute, serverless, containers — transfer between platforms. We recommend starting with AWS for breadth, earning the Solutions Architect Associate certification, and then acquiring an Azure Fundamentals cert as a second signal. The combination costs roughly six months of focused study and dramatically widens the opportunity set.</p>
+          <p>What we tell every cloud student: the certification is proof you studied. The projects you build during the course are proof you can work. Both matter. Neither alone is enough.</p>
+        </article>
+
+        <!-- Blog 4 -->
+        <article class="blog-card">
+          <div class="blog-card-tag">Industry Expertise</div>
+          <h2>Cybersecurity Careers in India: Why 2025 Is the Right Time to Enter the Field</h2>
+          <div class="blog-meta">By Murugan V. &nbsp;·&nbsp; September 22, 2025 &nbsp;·&nbsp; 5 min read</div>
+          <p>India reported a 25% year-on-year increase in cybersecurity incidents in 2024. The government's Digital India push, expanding fintech infrastructure, and the rise of cloud-native enterprises have collectively created a talent gap that the country's existing cybersecurity workforce cannot fill.</p>
+          <p>The numbers are stark. According to NASSCOM, India needs approximately 1 million trained cybersecurity professionals by 2026. Current supply sits well below that. For someone entering the field now, it means the demand side is unusually favourable — entry-level security analyst roles are paying ₹5–8 LPA in metro areas, with certified ethical hackers clearing ₹12 LPA+ at the mid-level.</p>
+          <p>What makes cybersecurity different from other IT disciplines is that the entry point matters enormously. Many developers pivot to security roles, but those who train specifically for security from the outset — with hands-on penetration testing, familiarity with attack frameworks like MITRE ATT&CK, and exposure to SIEM platforms — tend to advance faster because they think offensively from the start. That's the mindset we build at SA Training from day one of our Ethical Hacking course.</p>
+          <p>If you're weighing which IT specialisation to pursue, cybersecurity in 2025 combines favourable demand, meaningful work, and genuine career depth. The barrier is real knowledge and practical skill — which is exactly what structured training is for.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== CONTACT PAGE ===== -->
+<main id="page-contact" class="page">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="ph-breadcrumb"><span onclick="showPage('home')">Home</span> / Contact</div>
+      <h1>Get in Touch</h1>
+      <p>Ask about a course, book a counselling session, or talk corporate training — we'll get back to you within one business day.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact Info + Form -->
+        <div class="contact-left">
+          <div class="contact-info-blocks">
+            <div class="cib">
+              <div class="cib-icon">📍</div>
+              <div>
+                <strong>Address</strong>
+                <span>SA Training Institute<br/>Tamil Nadu, India</span>
+              </div>
+            </div>
+            <div class="cib">
+              <div class="cib-icon">📞</div>
+              <div>
+                <strong>Phone</strong>
+                <span>+91 98400 00000</span>
+              </div>
+            </div>
+            <div class="cib">
+              <div class="cib-icon">✉️</div>
+              <div>
+                <strong>Email</strong>
+                <span>info@satraining.in</span>
+              </div>
+            </div>
+            <div class="cib">
+              <div class="cib-icon">🕐</div>
+              <div>
+                <strong>Hours</strong>
+                <span>Mon–Sat · 9 AM – 7 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" onsubmit="handleFormSubmit(event)">
+            <h3>Send us a message</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="Ravi" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Kumar" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+91 98400 00000" />
+            </div>
+            <div class="form-group">
+              <label for="course">Course of Interest</label>
+              <select id="course">
+                <option value="">Select a course...</option>
+                <option>AI & Machine Learning</option>
+                <option>Full-Stack Web Development</option>
+                <option>Data Science & Analytics</option>
+                <option>Cloud Computing — AWS</option>
+                <option>DevOps Engineering</option>
+                <option>Ethical Hacking & Cybersecurity</option>
+                <option>Mobile App Development</option>
+                <option>Generative AI & Prompt Engineering</option>
+                <option>Corporate Training</option>
+                <option>Other / General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" placeholder="Tell us your background and what you'd like to achieve..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+            <div id="form-success" class="form-success" style="display:none">✅ Message received! We'll get back to you within one business day.</div>
+          </form>
+        </div>
+
+        <!-- AI Chatbot -->
+        <div class="contact-right">
+          <div class="chatbot-wrapper">
+            <div class="chatbot-header">
+              <div class="chatbot-avatar">🤖</div>
+              <div>
+                <strong>SAAI — Course Advisor</strong>
+                <span class="chatbot-status">● Online</span>
+              </div>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+              <div class="chat-msg bot">
+                <div class="chat-bubble">Hi! I'm SAAI, SA Training's AI course advisor. I can help you choose the right course, understand our curriculum, or answer questions about fees and schedules. What would you like to know?</div>
+                <div class="chat-time">Just now</div>
+              </div>
+              <div class="chat-quick-replies" id="quickReplies">
+                <button class="quick-reply" onclick="sendQuickReply('Which course is right for me?')">Which course is right for me?</button>
+                <button class="quick-reply" onclick="sendQuickReply('Tell me about the AI/ML track')">About the AI/ML track</button>
+                <button class="quick-reply" onclick="sendQuickReply('What are the fees?')">Fees & schedule</button>
+                <button class="quick-reply" onclick="sendQuickReply('Do you offer placement support?')">Placement support</button>
+              </div>
+            </div>
+            <div class="chatbot-input-area">
+              <input type="text" id="chatInput" class="chatbot-input" placeholder="Ask anything about our courses..." onkeydown="handleChatKey(event)" />
+              <button class="chat-send-btn" onclick="sendChatMessage()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </div>
+            <div class="chatbot-footer">Powered by AI · Responses are general guidance. For specific admission queries, please call or fill the form.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-mark">SA</span>
+          <span class="logo-text">Training</span>
+        </div>
+        <p>Tamil Nadu's leading IT training institute — building industry-ready professionals since 2018.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◉</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('services')">AI & Machine Learning</a></li>
+          <li><a href="#" onclick="showPage('services')">Full-Stack Development</a></li>
+          <li><a href="#" onclick="showPage('services')">Data Science</a></li>
+          <li><a href="#" onclick="showPage('services')">Cloud Computing</a></li>
+          <li><a href="#" onclick="showPage('services')">Cybersecurity</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('about')">About Us</a></li>
+          <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+          <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+          <li><a href="#">Placement Partners</a></li>
+          <li><a href="#">Corporate Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li>Tamil Nadu, India</li>
+          <li>+91 98400 00000</li>
+          <li>info@satraining.in</li>
+          <li>Mon–Sat · 9 AM – 7 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 SA Training. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Use</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
 
